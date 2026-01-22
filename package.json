@@ -1,0 +1,20 @@
+{
+  "name": "product-manager-pern",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Josue Gomez",  
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
