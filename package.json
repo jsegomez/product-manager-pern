@@ -1,20 +1,27 @@
 {
   "name": "product-manager-pern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Product Manager PERN Stack Application",
   "license": "ISC",
-  "author": "Josue Gomez",  
-  "main": "index.js",
+  "author": "Josue Gomez",
+  "main": "dist/index.js",
+  "type": "commonjs",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "nodemon": "^3.1.11",
+    "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1"
   }
 }

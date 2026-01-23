@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    /* Configuración de módulos y resolución */
+    "target": "ES2020",                          // Versión de JavaScript de salida
+    "module": "commonjs",                        // Sistema de módulos (CommonJS para Node.js)
+    "lib": ["ES2020"],                          // Librerías incluidas
+    "moduleResolution": "node",                  // Resolución de módulos estilo Node.js
+    
+    /* Directorios de entrada/salida */
+    "rootDir": "./src",                          // Carpeta de código fuente
+    "outDir": "./dist",                          // Carpeta de salida compilada
+    
+    /* Verificación de tipos estricta */
+    "strict": true,                              // Habilita todas las verificaciones estrictas
+    "noImplicitAny": true,                       // Error si hay tipos 'any' implícitos
+    "strictNullChecks": true,                    // Verificación estricta de null/undefined
+    "strictFunctionTypes": true,                 // Verificación estricta de tipos de función
+    "strictPropertyInitialization": true,        // Las propiedades deben inicializarse
+    "noImplicitThis": true,                      // Error si 'this' tiene tipo implícito 'any'
+    "alwaysStrict": true,                        // Emitir "use strict" en cada archivo
+    
+    /* Verificaciones adicionales */
+    "noUnusedLocals": true,                      // Error si hay variables locales sin usar
+    "noUnusedParameters": true,                  // Error si hay parámetros sin usar
+    "noImplicitReturns": true,                   // Error si no todas las rutas retornan valor
+    "noFallthroughCasesInSwitch": true,         // Error en switch sin break
+    
+    /* Interoperabilidad */
+    "esModuleInterop": true,                     // Mejor compatibilidad con módulos ES6
+    "allowSyntheticDefaultImports": true,        // Permite imports por defecto sintéticos
+    "forceConsistentCasingInFileNames": true,   // Asegura consistencia en nombres de archivos
+    
+    /* Otros */
+    "skipLibCheck": true,                        // Omite verificación de archivos .d.ts
+    "resolveJsonModule": true,                   // Permite importar archivos JSON
+    "sourceMap": true,                           // Genera archivos .map para debugging
+    "declaration": true,                         // Genera archivos .d.ts
+    "removeComments": true                       // Elimina comentarios en salida
+  },
+  "include": [
+    "src/**/*"                                    // Incluye todos los archivos en src/
+  ],
+  "exclude": [
+    "node_modules",                               // Excluye dependencias
+    "dist",                                       // Excluye archivos compilados
+    "**/*.spec.ts",                              // Excluye archivos de test
+    "**/*.test.ts"
+  ]
+}
