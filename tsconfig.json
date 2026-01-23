@@ -35,7 +35,9 @@
     "resolveJsonModule": true,                   // Permite importar archivos JSON
     "sourceMap": true,                           // Genera archivos .map para debugging
     "declaration": true,                         // Genera archivos .d.ts
-    "removeComments": true                       // Elimina comentarios en salida
+    "removeComments": true,                       // Elimina comentarios en salida
+    "experimentalDecorators": true,               // Permite decoradores experimentales
+    "emitDecoratorMetadata": true,                // Emite metadatos de decoradores
   },
   "include": [
     "src/**/*"                                    // Incluye todos los archivos en src/
