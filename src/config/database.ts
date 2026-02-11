@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
+import Product from "../models/Product.model";
 
 const database = new Sequelize(process.env.DATABASE_URL!,{
     pool: {
@@ -7,7 +8,8 @@ const database = new Sequelize(process.env.DATABASE_URL!,{
         acquire: 30000,
         idle: 10000
     },
-    logging: false
+    logging: console.log,
+    models: [Product]
 });
 
 export default database;
