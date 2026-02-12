@@ -1,4 +1,4 @@
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { Column, DataType, Default, Model, Table } from "sequelize-typescript";
 
 @Table({
     tableName: "products",
@@ -23,10 +23,10 @@ export default class Product extends Model<Product> {
     })
     declare price: number;
 
+    @Default(true)
     @Column({
         type: DataType.BOOLEAN,
         allowNull: false,
-        defaultValue: true
     })
     declare available: boolean;
 }
