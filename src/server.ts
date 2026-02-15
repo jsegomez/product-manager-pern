@@ -3,6 +3,7 @@ import database from "./config/database";
 import express from "express";
 
 import productRoutes from "./routes/product.routes";
+import { errorHandler } from './middlewares/error-handler';
 
 // database connection
 export async function connectDatabase() {
@@ -17,10 +18,13 @@ export async function connectDatabase() {
 }
 
 const app = express();
-app.use(express.json());
 
 // Routes
 app.use('/products', productRoutes);
+
+// Middlewares
+app.use(express.json());
+app.use(errorHandler);
 
 export default app;
 

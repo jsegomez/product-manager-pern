@@ -1,10 +1,20 @@
-import { Router } from "express"
+import { Router, Request, Response, NextFunction } from "express"
 
-import { body } from "express-validator";
-import { createProduct } from "../handlers/product";
+import { body, query } from "express-validator";
 import { handleValidationErrors } from "../middlewares/validation.middleware";
 
+import { createProduct, getProductById, getProducts } from "../handlers/product";
+
 const productRoutes = Router();
+
+productRoutes.get('/',
+    [query('id').optional().isInt().withMessage('ID must be an integer')],
+    handleValidationErrors,
+    (req: Request, res: Response, next: NextFunction) =>{
+        if (req.query.id) return getProductById(req, res, next);
+        return getProducts(req, res, next);
+    }
+);
 
 productRoutes.post('/',
     [
